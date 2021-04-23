@@ -1,0 +1,28 @@
+{
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [
+          ".js",
+          ".ts",
+          ".d.ts"
+        ],
+        "moduleDirectory": [
+          "node_modules",
+          "../src"
+        ]
+      }
+    }
+  },
+  "rules": {
+    "@typescript-eslint/no-unsafe-member-access": "off",
+    "@typescript-eslint/no-magic-numbers": "off",
+    "import/no-extraneous-dependencies": "off",
+    "max-statements": "off",
+    "no-magic-numbers": "off",
+    "jest/no-jest-import": "off"
+  },
+  "env": {
+    "jest": true
+  }
+}

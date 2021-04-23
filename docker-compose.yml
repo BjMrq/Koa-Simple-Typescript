@@ -1,0 +1,18 @@
+version: "2.4"
+services:
+  #Node Service
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    container_name: node-${APP_NAME}
+    depends_on: 
+      - db
+    env_file: .env
+    ports:
+      - ${PORT}:${PORT}
+      # Port mapping for debug
+      - 9229:9229
+    volumes:
+      - .:/node/app:delegated
+      - /node/app/node_modules
