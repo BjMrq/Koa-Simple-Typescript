@@ -4,15 +4,18 @@ import logger from "config/logger";
 import { getFullDate } from "utils";
 
 const log = async (context: Context, next: Next): Promise<void> => {
-  logger.info(
-    `${getFullDate()} | ${context.method} | ${context.path} | ${JSON.stringify(
-      context.request.body,
-      undefined,
-      2
-    )} |`
-  );
-
   await next();
+  logger.info({
+    request: {
+      date: getFullDate(),
+      method: context.method,
+      path: context.path,
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+      body: context.request.body,
+    },
+
+    response: { status: context.status, body: context.body },
+  });
 };
 
 export default log;

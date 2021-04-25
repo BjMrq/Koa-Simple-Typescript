@@ -1,0 +1,9 @@
+############### HEALTH ###############
+
+### GET health-check
+GET {{baseUrl}}/{{version}}/health
+Accept: */*
+content-type: application/json
+Authorization: Bearer {{$dotenv USER_TOKEN }}
+
+
