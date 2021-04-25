@@ -1,6 +1,6 @@
 import Router from "koa-router";
 
-import withResponse from "globalMiddlewares/withResponse";
+import withResponse from "middlewares/wrappers/withResponse";
 
 export const healthSubRouter = (): Router.IMiddleware => {
   const router = new Router({

@@ -1,6 +1,5 @@
 import { NotAuthorizeError } from "config/errors/error.types";
-
-import { AccessMiddleware } from "../types";
+import { AccessMiddleware } from "types";
 
 const accessValidateIdentity: AccessMiddleware = (keyToCompare) => async (
   context,

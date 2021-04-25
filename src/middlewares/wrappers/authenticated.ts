@@ -7,8 +7,7 @@ import {
   NotAuthorizeError,
 } from "config/errors/error.types";
 import { EncodedAuthData } from "types";
-
-import { jwtSecret, stateKeys } from "../config/variables";
+import { jwtSecret, stateKeys } from "config/variables";
 
 const auth = async (context: Context, next: Next): Promise<void> => {
   if (!context.headers.authorization) {

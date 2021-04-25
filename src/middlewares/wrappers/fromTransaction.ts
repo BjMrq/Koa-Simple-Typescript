@@ -1,8 +1,7 @@
 /* eslint-disable no-param-reassign */
 import { stateKeys } from "config/variables";
 import { StatefulContext, WithTransactionMiddleware } from "types";
-
-import { addToTransactionState } from "../utils/context";
+import { addToTransactionState } from "utils/context";
 
 /**
  * Records middleware wrapper that receive a function that will return data to be added to the records state in the context
