@@ -1,5 +1,6 @@
 import { RateLimitOptions } from "koa2-ratelimit";
 
+import logger from "./logger";
 import { isDevelopment } from "./variables";
 
 export const throttleOptions = {
@@ -10,7 +11,6 @@ export const throttleOptions = {
   getUserId: async (context) => context.get("X-Forwarded-For") || context.ip,
 
   onLimitReached: (context) => {
-    // eslint-disable-next-line no-console
-    console.log("Suspicious Ip has reached max requests:", context.ip);
+    logger.warning("Suspicious Ip has reached max requests:", context.ip);
   },
 } as RateLimitOptions;
