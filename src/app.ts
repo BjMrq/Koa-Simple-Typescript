@@ -8,8 +8,6 @@ import { appName, port, isProduction } from "config/variables";
 const bootstrap = (): void => {
   /**
    * Connect database
-   * It's important that the database is initialized first
-   * to bind the Objection's model to the knex instance
    */
   connectDB();
 
